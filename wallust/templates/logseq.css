@@ -1,0 +1,67 @@
+:root {
+  --ct-text-size: 16px;
+  --ct-line-height: 1.6;
+  --ls-font-family: "Fira Code", "LXGW WenKai", Inter, "文泉驿微米黑", "SimSun",  sans-serif;
+  --ct-page-title-font-family: var(--ls-font-family);
+  --ct-code-font-family: "Fira Code", monospace;
+}
+
+#main-content-container {
+            font-size: 1.1em;
+          }
+
+          h1 {font-size: 26px !important;font-weight: 600 !important;} 
+
+.katex { font-size: 1em !important; }
+
+.dark-theme,
+html {
+  --ls-primary-background-color: {{background}};
+  --ls-secondary-background-color: {{background}};
+  --ls-tertiary-background-color: {{color8}};
+  --ls-quaternary-background-color: {{color8}};
+  --ls-table-tr-even-background-color: {{color8}};
+  --ls-active-primary-color: {{color13}};
+  --ls-active-secondary-color: {{color15}};
+  --ls-page-properties-background-color: var(--ls-secondary-background-color);
+  --ls-block-properties-background-color: var(--ls-secondary-background-color);
+  --ls-block-ref-link-text-color: var(--ls-link-text-color);
+  --ls-search-background-color: var(--ls-secondary-background-color);
+  --ls-border-color: var(--ls-primary-text-color);
+  --ls-secondary-border-color: var(--ls-primary-text-color);
+  --ls-guideline-color: {{color15}};
+  --ls-menu-hover-color: var(--ls-secondary-background-color);
+  --ls-primary-text-color: {{color15}};
+  --ls-secondary-text-color: {{color15}};
+  --ls-title-text-color: var(--ls-primary-text-color);
+  --ls-link-text-color: {{color7}};
+  --ls-link-text-hover-color: {{color15}};
+  --ls-link-ref-text-color: var(--ls-link-text-color);
+  --ls-link-ref-text-hover-color: var(--ls-link-text-hover-color);
+  --ls-tag-text-color: var(--ls-link-text-color);
+  --ls-tag-text-hover-color: var(--ls-link-text-hover-color);
+  --ls-slide-background-color: var(--ls-primary-background-color);
+  --ls-block-bullet-border-color: {{color15}};
+  --ls-block-bullet-color: var(--ls-link-text-color);
+  --ls-block-highlight-color: {{color8}};
+  --ls-selection-background-color: {{color8}};
+  --ls-page-checkbox-color: {{color15}};
+  --ls-page-checkbox-border-color: var(--ls-primary-text-color);
+  --ls-page-blockquote-color: var(--ls-primary-text-color);
+  --ls-page-blockquote-bg-color: var(--ls-secondary-background-color);
+  --ls-page-blockquote-border-color: var(--ls-border-color);
+  --ls-page-inline-code-color: var(--ls-primary-text-color);
+  --ls-page-inline-code-bg-color: {{color15}};
+  --ls-page-title-size: 2rem;
+  --ls-scrollbar-foreground-color: {{color15}};
+  --ls-scrollbar-background-color: var(--ls-primary-background-color);
+  --ls-scrollbar-thumb-hover-color: {{color15}};
+  --ls-head-text-color: var(--ls-link-text-color);
+  --ls-icon-color: var(--ls-link-text-color);
+  --ls-search-icon-color: var(--ls-link-text-color);
+  --ls-a-chosen-bg: var(--ls-secondary-background-color);
+  --ls-right-sidebar-code-bg-color: var(--ls-page-inline-code-bg-color);
+  --color-level-1: var(--ls-secondary-background-color);
+  --color-level-2: var(--ls-tertiary-background-color);
+  --color-level-3: var(--ls-quaternary-background-color);
+}

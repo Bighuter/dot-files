@@ -1,0 +1,41 @@
+<style-scheme id="wallust" _name="Wallust" version="1.0">
+  <author>Based on Matcha-Dark.tmTheme</author>
+  <_description>Mousepad style derived from Matcha Dark theme palette</_description>
+
+  <!-- Base Colors -->
+  <color name="background" value="{{background}}"/>
+  <color name="foreground" value="{{foreground}}"/>
+  <color name="cursor" value="{{cursor}}"/>
+  <color name="selection" value="{{foreground | complementary | lighten(0.8)}}"/>
+  <color name="line-highlight" value="{{color4}}"/>
+  <color name="search-highlight" value="{{color15}}"/>
+
+  <!-- Syntax Colors -->
+  <color name="string" value="{{color9}}"/>
+  <color name="constant.numeric" value="{{color5}}"/>
+  <color name="keyword" value="{{color11}}"/>
+  <color name="function.name" value="{{color6}}"/>
+  <color name="type.name" value="{{color8}}"/>
+  <color name="comment" value="{{color6}}"/> <!-- 使用更柔和评论色 -->
+  <color name="error" value="{{color9}}"/>
+
+  <!-- UI Elements -->
+  <style name="text" foreground="foreground" background="background"/>
+  <style name="selection" foreground="foreground" background="selection"/>
+  <style name="cursor" foreground="cursor"/>
+  <style name="current-line" background="line-highlight"/>
+  <style name="search-match" foreground="background" background="search-highlight"/>
+
+  <!-- Syntax Highlighting -->
+  <style name="def:comment" foreground="comment" italic="true"/>
+  <style name="def:string" foreground="string"/>
+  <style name="def:constant" foreground="constant.numeric"/>
+  <style name="def:keyword" foreground="keyword" bold="true"/>
+  <style name="def:function" foreground="function.name"/>
+  <style name="def:type" foreground="type.name"/>
+  <style name="def:error" foreground="error" background="background" bold="true"/>
+
+  <!-- Line Numbers -->
+  <style name="line-numbers" foreground="#5a6065" background="background"/>
+</style-scheme>
+

@@ -1,0 +1,16 @@
+* {
+    background:     #1E1E2E;
+    color0:         #1E1E2E;
+    background-alt: #585B70;
+    color8:         #585B70;
+    foreground:     #CDD6F4;
+    color7:         #CDD6F4;
+    selected:       #89B4FA;
+    color4:         #89B4FA;
+    border:         #89B4FA;
+    color9:         #89B4FA;
+    active:         #A6E3A1;
+    color2:         #A6E3A1;
+    urgent:         #F38BA8;
+    color1:         #F38BA8;
+}

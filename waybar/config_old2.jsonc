@@ -1,0 +1,44 @@
+// -*- mode: jsonc -*-
+{
+    "reload_style_on_change": true,
+    "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 1, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "niri/workspaces"
+    ],
+    "modules-right": [
+        //"network",
+        "tray",
+        //"pulseaudio",
+        "clock"
+    ],
+    "tray": {
+        "icon-size": 15,
+        "spacing": 16
+        // "icons": {
+        //   "blueman": "bluetooth",
+        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        // }
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "󰈀",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "󰛵",
+        "format-disconnected": "⚠"
+    },
+    "pulseaudio": {
+        "on-click": "pavucontrol"
+    }
+}
+
