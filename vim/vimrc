@@ -1,0 +1,68 @@
+set nocompatible
+" vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'easymotion/vim-easymotion'
+Plug 'zzhirong/vim-easymotion-zh'
+Plug 'lervag/vimtex'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'sirver/ultisnips'
+Plug 'plasticboy/vim-markdown', {'for': ['md']}
+Plug 'jiangmiao/auto-pairs'
+Plug 'arcticicestudio/nord-vim'
+call plug#end()
+" 界面设置
+set t_Co=256
+syntax enable
+set number
+let g:python3_host_prog = '/usr/local/bin/python3'
+
+" ...
+" 操作定义
+" ...
+:nmap <c-s> :w<CR>
+:imap <c-s> <Esc>:w<CR>a
+"AutoPairs
+let g:AutoPairsShortcutFastWrap = '<C-e>'
+"tex preview config
+let g:vimtex_compiler_latexmk_engines = {
+    \ '_'                : '-xelatex',
+    \}
+let g:tex_flavor='latex'
+let g:vimtex_view_use_temp_files = 0
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+"markdown math preview
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+highlight Conceal ctermbg=NONE 
+filetype plugin on
+"setlocal spell
+set spelllang=en_gb
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+"au FileType tex setl sw=2 sts=2 et
+setl sw=2 sts=2 et
+"Snippts
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetDirectories = ['UltiSnips', $HOME.'/.vim/Ultisnips']
+"Easy motion ZH
+let g:EasyMotion_leader_key=";"
+let g:EasyMotion_skipfoldedline=0
+let g:EasyMotion_space_jump_first=1
+let g:EasyMotion_move_highlight = 0
+let g:EasyMotion_use_migemo = 1
+noremap s <Plug>(easymotion-overwin-f2)
+" `s` 和 surround 冲突, 比如 ds
+onoremap z <Plug>(easymotion-f2)
+noremap f <Plug>(easymotion-fl)
+noremap F <Plug>(easymotion-Fl)
+noremap t <Plug>(easymotion-tl)
+noremap T <Plug>(easymotion-Tl)
+noremap ;. <Plug>(easymotion-repeat)
+noremap ;l <Plug>(easymotion-next)
+noremap ;h <Plug>(easymotion-prev)

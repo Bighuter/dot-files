@@ -1,0 +1,122 @@
+"if has('python3')
+"endif
+set nocompatible
+" vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'lervag/vimtex'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'sirver/ultisnips'
+"Plug 'bluz71/vim-moonfly-statusline'
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'plasticboy/vim-markdown', {'for': ['md']}
+Plug 'jiangmiao/auto-pairs'
+"Plug 'ayu-theme/ayu-vim'
+"Plug 'arcticicestudio/nord-vim'
+"{'for': ['md','py','vim','sh']}
+"Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
+call plug#end()
+" 界面设置
+set t_Co=256
+"set termguicolors     " enable true colors support
+"colorscheme nord
+if has("gui_running")
+    set guifont=JuliaMono\ 14
+endif
+syntax enable
+set number
+let g:python3_host_prog = '/usr/local/bin/python3'
+"nvim setting
+let mapleader = "\<Space>"
+set relativenumber
+let s:hidden_all = 0
+function! ToggleHiddenAll()
+    if s:hidden_all  == 0
+        let s:hidden_all = 1
+        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+    else
+        let s:hidden_all = 0
+        set showmode
+        set ruler
+        set laststatus=2
+        set showcmd
+    endif
+endfunction
+nnoremap <C-h> :call ToggleHiddenAll()<CR>
+
+" ...
+" 操作定义
+" ...
+map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeWinSize=16
+"AutoPairs
+let g:AutoPairsShortcutFastWrap = '<C-e>'
+"markdown math
+let g:mma_highlight_option = "solarized"
+let g:vim_markdown_math = 1
+"tex preview config
+let g:tex_flavor='latex'
+" let g:tex_conceal = ''
+" let g:vimtex_fold_manual = 1
+" let g:vimtex_latexmk_continuous = 1
+let g:vimtex_view_use_temp_files = 0
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+filetype plugin on
+setlocal spell
+set spelllang=en_gb
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+"au FileType tex setl sw=2 sts=2 et
+setl sw=2 sts=2 et
+"Snippts
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetDirectories = ['UltiSnips', $HOME.'/.vim/Ultisnips']
+" QuickRun: 一键运行
+" [[[
+command! QuickRun call QuickRun()
+noremap  <silent> <F5>       <Esc>:call QuickRun()<CR>
+noremap! <silent> <F5>       <Esc>:call QuickRun()<CR>
+function! QuickRun()
+    exec 'w'
+    if &filetype == 'html' || &filetype == 'htmldjango'
+        call BrowserOpen(expand("%:p"))
+    elseif &filetype == 'markdown'
+        exec "MarkdownPreview"
+    elseif &filetype == 'tex'
+	VimtexCompile
+    elseif &filetype == 'c'
+	exec "!gcc% -o %<"
+    elseif &filetype == 'cpp'
+    	exec "!g++ % -o %<"
+	exec "!time ./%<"
+    elseif &filetype == 'sh'
+    	:!time bash %
+    elseif &filetype == 'python'
+    	exec "!time python3 %"
+    else
+        echo "Not supported filetype"
+    endif
+endfunction
+" ]]]
+" buffers
+let c = 1
+while c <= 10
+  execute "nnoremap " . c . "gb :" . c . "b\<CR>"
+  let c += 1
+endwhile
+nnoremap <Leader>b :bp<CR>
+highlight Conceal ctermbg=NONE 
+if has("gui_vimr")
+  " Here goes some VimR specific settings like
+  set termguicolors
+
+au BufRead,BufNewFile *.wls setl ft=mma
+endif

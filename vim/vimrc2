@@ -1,0 +1,29 @@
+"if has('python3')
+"endif
+set nocompatible
+" vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'lervag/vimtex'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'sirver/ultisnips'
+Plug 'plasticboy/vim-markdown', {'for': ['md']}
+Plug 'jiangmiao/auto-pairs'
+Plug 'ayu-theme/ayu-vim'
+Plug 'arcticicestudio/nord-vim'
+"{'for': ['md','py','vim','sh']}
+"Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
+call plug#end()
+" 界面设置
+set t_Co=256
+"set termguicolors     " enable true colors support
+colorscheme nord
+syntax enable
+set number
+let g:python3_host_prog = '/usr/local/bin/python3'
+
+"Snippts
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetDirectories = ['UltiSnips', $HOME.'/.vim/Ultisnips']
+" buffers

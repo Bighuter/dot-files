@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/tmp/xournalpp-11216/tex'
+let g:netrw_dirhist_3='/sys/devices/platform/thinkpad_acpi/leds/platform::micmute'
+let g:netrw_dirhist_2='/home/x/.config/epdfview'
+let g:netrw_dirhist_1='/home/x/.i3'
